@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Problem1 : MonoBehaviour
+public class Day1 : MonoBehaviour
 {
     string[] inputs;
     void Start()
