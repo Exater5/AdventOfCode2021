@@ -35,10 +35,75 @@ public class Day5 : MonoBehaviour
             aX.Add(int.Parse(firstSplit[0]));
             aY.Add(int.Parse(firstSplit[1]));
             bX.Add(int.Parse(firstSplit[2]));
-            bY.Add(int.Parse(firstSplit[3]));
+            bY.Add(int.Parse(firstSplit[3]));      
+        }
+
+
+        //MAX
+        int maxX = 0;
+        int maxY = 0;
+        foreach (int i in aX)
+        {
+            if(i > maxX)
+            {
+                maxX = i;
+            }
+        }
+        foreach (int i in bX)
+        {
+            if (i > maxX)
+            {
+                maxX = i;
+            }
+        }
+        foreach (int i in aY)
+        {
+            if (i > maxY)
+            {
+                maxY = i;
+            }
+        }
+        foreach (int i in bY)
+        {
+            if (i > maxY)
+            {
+                maxY = i;
+            }
+        }
+        //MAX
+
+
+
+        List<List<int>> matrix = new List<List<int>>();
+        for (int i = 0; i < maxY; i++)
+        {
+            matrix.Add(new List<int>());
+            for (int j = 0; j < maxX; j++)
+            {
+                matrix[i].Add(0);
+            }
+        }
+
+        for (int i = 0; i < aX.Count; i++)
+        {
+            matrix[aY[i]][aX[i]]++;
+            matrix[bY[i]][bX[i]]++;
         }
 
 
 
+
+        //Matrix Writer
+        string rMatrix = string.Empty;
+        for (int i = 0; i < maxY; i++)
+        {
+            for (int j = 0; j < maxX; j++)
+            {
+                rMatrix += matrix[i][j];
+            }
+            rMatrix += "\n";
+        }
+        print(rMatrix);
+        //Matrix Writer
     }
 }
