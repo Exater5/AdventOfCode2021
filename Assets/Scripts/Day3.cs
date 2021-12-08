@@ -80,14 +80,17 @@ public class Day3 : MonoBehaviour
             }
         }
 
+        print(convertedNumbers.Count + " " + convertedNumbers[0].Count);
+        //Filas - Columnas
 
-        List<int> zeroAmount = new List<int>();
-        List<int> oneAmount = new List<int>();
 
-        for (int i = 0; i < convertedNumbers[0].Count; i++)
-        {
-            zeroAmount.Add(0);
-            oneAmount.Add(0);
-        }
+        //List<int> zeroAmount = new List<int>();
+        //List<int> oneAmount = new List<int>();
+
+        //for (int i = 0; i < convertedNumbers[0].Count; i++)
+        //{
+        //    zeroAmount.Add(0);
+        //    oneAmount.Add(0);
+        //}
     }
 }
