@@ -7,7 +7,7 @@ public class Day3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Problem1();
+        Problem2();
     }
 
     public void Problem1()
@@ -62,7 +62,32 @@ public class Day3 : MonoBehaviour
                 result += "0";
             }
         }
-        print(result);
-        print(1869 * 2226);
+    }
+
+
+    public void Problem2()
+    {
+        string[] rawInput = InputReader.ReadInputInLines(3, 0);
+        List<List<int>> convertedNumbers = new List<List<int>>();
+
+        for (int i = 0; i < rawInput.Length; i++)
+        {
+            convertedNumbers.Add(new List<int>());
+            for (int j = 0; j < rawInput[0].Length; j++)
+            {
+                int convertedN = int.Parse(rawInput[i][j].ToString());
+                convertedNumbers[i].Add(convertedN);
+            }
+        }
+
+
+        List<int> zeroAmount = new List<int>();
+        List<int> oneAmount = new List<int>();
+
+        for (int i = 0; i < convertedNumbers[0].Count; i++)
+        {
+            zeroAmount.Add(0);
+            oneAmount.Add(0);
+        }
     }
 }

@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Day5 : MonoBehaviour
 {
-    [SerializeField] List<int> aX, aY, bX, bY;
+    [SerializeField] List<Vector2> origins, targets;
 
     // Start is called before the first frame update
     void Start()
     {
-        aX = new List<int>();
-        aY = new List<int>();
-        bX = new List<int>();
-        bY = new List<int>();
+        origins = new List<Vector2>();
+        targets = new List<Vector2>();
         Problem1();
     }
 
@@ -32,44 +30,34 @@ public class Day5 : MonoBehaviour
                 }
             }
             firstSplit = targetSplit.Split(',', '-');
-            aX.Add(int.Parse(firstSplit[0]));
-            aY.Add(int.Parse(firstSplit[1]));
-            bX.Add(int.Parse(firstSplit[2]));
-            bY.Add(int.Parse(firstSplit[3]));      
+            origins.Add(new Vector2(int.Parse(firstSplit[0]), int.Parse(firstSplit[1])));
+            targets.Add(new Vector2(int.Parse(firstSplit[2]), int.Parse(firstSplit[3])));   
         }
-
 
         //MAX
         int maxX = 0;
         int maxY = 0;
-        foreach (int i in aX)
+        for (int i = 0; i < origins.Count; i++)
         {
-            if(i > maxX)
+            if (origins[i].x > maxX)
             {
-                maxX = i;
+                maxX = (int)origins[i].x;
+            }
+            if (targets[i].x > maxX)
+            {
+                maxX = (int)origins[i].x;
+            }
+            if (origins[i].y > maxY)
+            {
+                maxY = (int)origins[i].y;
+            }
+            if (targets[i].y > maxY)
+            {
+                maxY = (int)origins[i].y;
             }
         }
-        foreach (int i in bX)
-        {
-            if (i > maxX)
-            {
-                maxX = i;
-            }
-        }
-        foreach (int i in aY)
-        {
-            if (i > maxY)
-            {
-                maxY = i;
-            }
-        }
-        foreach (int i in bY)
-        {
-            if (i > maxY)
-            {
-                maxY = i;
-            }
-        }
+        maxX++;
+        maxY++;
         //MAX
 
 
@@ -84,16 +72,46 @@ public class Day5 : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < aX.Count; i++)
+
+        //Origenes
+        //matrix[aY[i]][aX[i]]++;
+        //matrix[bY[i]][bX[i]]++;
+
+        for (int i = 0; i < 1; i++)
         {
-            matrix[aY[i]][aX[i]]++;
-            matrix[bY[i]][bX[i]]++;
+            matrix[(int)origins[i].x][(int)origins[i].y]++;
+            matrix[(int)targets[i].x][(int)targets[i].y]++;
+            bool xOrBigger = false, yOrBigger = false;
+            Vector2 targetMark;
+
+            if (origins[i].x > targets[i].x)
+            {
+                xOrBigger = true;
+                targetMark = new Vector2(origins[i].x, origins[i].y);
+            }
+            else
+            {
+                targetMark = new Vector2(targets[i].x, targets[i].y);
+            }
+            if (origins[i].y > targets[i].y)
+            {
+                yOrBigger = true;
+            }
+
+            for (int j = 1; j < (int)Vector2.Distance(origins[i], targets[i]) -1; j++)
+            {
+                if (targetMark.x -1 > origins[i].x)
+                {
+                    targetMark.x--;
+                }
+                matrix[(int)targetMark.y][(int)targetMark.x]++;
+            }
         }
 
 
 
 
-        //Matrix Writer
+        //Matrix Console Writer 
         string rMatrix = string.Empty;
         for (int i = 0; i < maxY; i++)
         {
@@ -104,6 +122,6 @@ public class Day5 : MonoBehaviour
             rMatrix += "\n";
         }
         print(rMatrix);
-        //Matrix Writer
+        //Matrix Console Writer
     }
 }

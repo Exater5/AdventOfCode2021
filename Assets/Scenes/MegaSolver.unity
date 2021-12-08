@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 1478718841}
   - component: {fileID: 1478718842}
   - component: {fileID: 1478718840}
+  - component: {fileID: 1478718843}
   m_Layer: 0
   m_Name: ProblemSolver
   m_TagString: Untagged
@@ -366,7 +367,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478718835}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4fc5cb90313e0a34d8bba05c6c084d2d, type: 3}
   m_Name: 
@@ -406,12 +407,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478718835}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 326b6e8c553157a41a27e10ba07d02b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aX: 
-  aY: 
-  bX: 
-  bY: 
+  origins: []
+  targets: []
+--- !u!114 &1478718843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478718835}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a62f310339bf148aaffe6a55331131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  convertedInputs: 
