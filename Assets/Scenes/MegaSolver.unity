@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 1478718842}
   - component: {fileID: 1478718840}
   - component: {fileID: 1478718843}
+  - component: {fileID: 1478718844}
   m_Layer: 0
   m_Name: ProblemSolver
   m_TagString: Untagged
@@ -367,7 +368,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478718835}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4fc5cb90313e0a34d8bba05c6c084d2d, type: 3}
   m_Name: 
@@ -427,3 +428,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   convertedInputs: 
+--- !u!114 &1478718844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478718835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0e8ab9727725247becfc2fad0263d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawInput: []
+  next: 0
