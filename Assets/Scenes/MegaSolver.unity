@@ -442,3 +442,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rawInput: []
   next: 0
+  totalPoints: 0
+  scores: 
